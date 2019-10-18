@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (menuItem.getItemId()){
             case R.id.nav_cadastro:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CadastroFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NoperfilFragment()).commit();
                 break;
             case R.id.nav_guia:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new GuiaFragment()).commit();
