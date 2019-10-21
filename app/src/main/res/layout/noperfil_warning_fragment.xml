@@ -51,7 +51,7 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/bt_criaruser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -59,20 +59,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/bt_background"
         android:textColor="@color/colorPrimaryDark"
         android:padding="8dp"/>
 
     <Button
+        android:id="@+id/bt_possuiuser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:background="@drawable/bt_background"
+        android:padding="8dp"
         android:text="Já possuo um"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/colorPrimaryDark"
-        android:padding="8dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/bt_criaruser" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
