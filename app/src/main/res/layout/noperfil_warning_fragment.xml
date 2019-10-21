@@ -7,6 +7,12 @@
     android:layout_height="match_parent"
     android:background="@color/colorSecundary">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/logo_bomb"
+        android:alpha="0.1"/>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"

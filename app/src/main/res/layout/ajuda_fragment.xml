@@ -6,12 +6,18 @@
     android:background="@color/colorSecundary"
     android:orientation="vertical">
 
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/logo_bomb"
+        android:alpha="0.1"/>
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="200dp"
-        android:background="@color/colorSecundary"
         android:text="Em caso de Emergência"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
@@ -25,7 +31,6 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorSecundary"
         android:text="ligue para"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
@@ -39,7 +44,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@color/colorSecundary"
         android:text="bombeiro 193"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
@@ -53,7 +57,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@color/colorSecundary"
         android:text="policia militar 190"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
@@ -67,7 +70,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@color/colorSecundary"
         android:text="defesa civil 199"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
