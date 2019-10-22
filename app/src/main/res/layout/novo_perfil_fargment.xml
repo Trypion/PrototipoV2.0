@@ -7,14 +7,10 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:src="@drawable/logo_bomb"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:alpha="0.1"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
