@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -46,23 +47,39 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
+        Fragment fragment = null;
+
+        Session session;
+        session = new Session(this);
+
         switch (menuItem.getItemId()){
             case R.id.nav_cadastro:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NoperfilFragment()).commit();
+
+                if (session.getPerfil()){
+                    fragment = new PerfilFragment();
+                } else {
+                    fragment = new NoperfilFragment();
+                }
+
                 break;
             case R.id.nav_guia:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new GuiaFragment()).commit();
+                fragment = new GuiaFragment();
+
                 break;
             case R.id.nav_noticia:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NoticiasFragment()).commit();
+                fragment = new NoticiasFragment();
+
                 break;
             case R.id.nav_ajuda:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AjudaFragment()).commit();
+                fragment = new AjudaFragment();
+
                 break;
             case R.id.nav_contato:
                 Toast.makeText(this, "contato feito", Toast.LENGTH_SHORT).show();
                 break;
         }
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
 
         drawer.closeDrawer(GravityCompat.START);
         return true;
