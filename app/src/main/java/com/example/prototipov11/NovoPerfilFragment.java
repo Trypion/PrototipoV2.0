@@ -1,6 +1,8 @@
 package com.example.prototipov11;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +14,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProviders;
 
 public class NovoPerfilFragment extends Fragment {
+
+    private PerfilViewModel model;
 
     @Nullable
     @Override
@@ -26,6 +31,8 @@ public class NovoPerfilFragment extends Fragment {
 
         final Bundle perfil = new Bundle();
 
+        model = ViewModelProviders.of(getActivity()).get(PerfilViewModel.class);
+
         Button btnCriar = (Button) view.findViewById(R.id.btn_criar_perfil);
         btnCriar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,20 +42,21 @@ public class NovoPerfilFragment extends Fragment {
                 perfil.putString("email", perfilEmail.getText().toString());
                 perfil.putString("telefone", perfilTelefone.getText().toString());
 
+                model.setDados(perfil);
+
                 Toast.makeText(getActivity(), "Perfil Criado", Toast.LENGTH_SHORT).show();
 
                 PerfilFragment perfilFragment = new PerfilFragment();
 
-                perfilFragment.setArguments(perfil);
-
-                Session session = new Session(getActivity());
-                session.setPerfil(true);
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("perfil", true);
+                editor.apply();
 
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, perfilFragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
-
 
             }
         });

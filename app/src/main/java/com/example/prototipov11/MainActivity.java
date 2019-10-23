@@ -10,7 +10,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -47,15 +51,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        Fragment fragment = null;
+        Fragment fragment = new NoticiasFragment();
 
-        Session session;
-        session = new Session(this);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean perfil = sharedPreferences.getBoolean("perfil", false);
+
 
         switch (menuItem.getItemId()){
             case R.id.nav_cadastro:
 
-                if (session.getPerfil()){
+                if (perfil){
                     fragment = new PerfilFragment();
                 } else {
                     fragment = new NoperfilFragment();
@@ -92,5 +97,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.setting_perfil, menu);
+        return true;
     }
 }
