@@ -1,4 +1,4 @@
-package com.example.prototipov11;
+package com.example.prototipov11.UI.Perfil;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.prototipov11.R;
 
 public class NoperfilFragment extends Fragment {
 

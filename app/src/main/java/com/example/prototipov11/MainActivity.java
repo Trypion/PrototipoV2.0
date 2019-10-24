@@ -7,8 +7,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,13 +14,22 @@ import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.webkit.WebView;
 import android.widget.Toast;
 
+import com.example.prototipov11.UI.Ajuda.AjudaFragment;
+import com.example.prototipov11.UI.Guia.GuiaFragment;
+import com.example.prototipov11.UI.Home.NoticiasFragment;
+import com.example.prototipov11.UI.Perfil.NoperfilFragment;
+import com.example.prototipov11.UI.Perfil.NovoPerfilFragment;
+import com.example.prototipov11.UI.Perfil.PerfilFragment;
+import com.example.prototipov11.UI.Perfil.TwitterFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawer;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NoticiasFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TwitterFragment()).commit();
 
             navigationView.setCheckedItem(R.id.nav_noticia);
         }
@@ -53,14 +60,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Fragment fragment = new NoticiasFragment();
 
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         boolean perfil = sharedPreferences.getBoolean("perfil", false);
 
 
-        switch (menuItem.getItemId()){
+        switch (menuItem.getItemId()) {
             case R.id.nav_cadastro:
 
-                if (perfil){
+                if (perfil) {
                     fragment = new PerfilFragment();
                 } else {
                     fragment = new NoperfilFragment();
@@ -72,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 break;
             case R.id.nav_noticia:
-                fragment = new NoticiasFragment();
+                fragment = new TwitterFragment();
 
                 break;
             case R.id.nav_ajuda:
@@ -92,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)){
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
@@ -104,5 +111,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.setting_perfil, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        switch (item.getItemId()) {
+            case R.id.perfil_excluir:
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("perfil", false);
+                editor.apply();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NoperfilFragment()).commit();
+                return true;
+
+            case R.id.perfil_editar:
+                boolean perfil = sharedPreferences.getBoolean("perfil", false);
+                if(perfil) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NovoPerfilFragment()).commit();
+                    return true;
+                }else {
+                    Toast.makeText(this, "Nenhum Perfil Cadastrado", Toast.LENGTH_LONG).show();
+                    return true;
+                }
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

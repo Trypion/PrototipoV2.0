@@ -1,4 +1,4 @@
-package com.example.prototipov11;
+package com.example.prototipov11.UI.Perfil;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,6 +15,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
+
+import com.example.prototipov11.R;
 
 public class NovoPerfilFragment extends Fragment {
 

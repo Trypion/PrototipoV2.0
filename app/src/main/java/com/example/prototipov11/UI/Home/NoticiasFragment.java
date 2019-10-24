@@ -1,4 +1,4 @@
-package com.example.prototipov11;
+package com.example.prototipov11.UI.Home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +10,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.prototipov11.R;
+import com.example.prototipov11.UI.Adapters.RecyclerAdapter;
 
 public class NoticiasFragment extends Fragment {
 

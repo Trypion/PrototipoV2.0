@@ -1,4 +1,4 @@
-package com.example.prototipov11;
+package com.example.prototipov11.UI.Perfil;
 
 import android.os.Bundle;
 
