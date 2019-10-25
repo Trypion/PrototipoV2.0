@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,8 +16,6 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.prototipov11.R;
 
 public class PerfilFragment extends Fragment {
-
-
 
     @Nullable
     @Override
@@ -34,6 +33,16 @@ public class PerfilFragment extends Fragment {
                 perfilNome.setText(bundle.getString("nome", ""));
             }
         });
+
+
+        ImageButton btn_novo_item = (ImageButton) view.findViewById(R.id.btn_novo_item);
+        btn_novo_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
 
         return view;
     }
