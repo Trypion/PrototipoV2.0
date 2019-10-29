@@ -11,12 +11,14 @@ import android.webkit.WebViewClient;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.prototipov11.R;
+import com.twitter.sdk.android.tweetui.TweetTimelineRecyclerViewAdapter;
+import com.twitter.sdk.android.tweetui.UserTimeline;
 
 public class TwitterFragment extends Fragment {
-
-    private WebView webView;
 
     @Nullable
     @Override
@@ -24,12 +26,19 @@ public class TwitterFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.twitter_fragment, container, false);
 
-        webView = (WebView) view.findViewById(R.id.webview);
-        webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://twitter.com/cbmscoficial");
+        final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler);
 
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        UserTimeline userTimeline = new UserTimeline.Builder().screenName("cbmscoficial").build();
+
+        final TweetTimelineRecyclerViewAdapter adapter =
+                new TweetTimelineRecyclerViewAdapter.Builder(getContext())
+                        .setTimeline(userTimeline)
+                        .setViewStyle(R.style.tw__TweetLightWithActionsStyle)
+                        .build();
+
+        recyclerView.setAdapter(adapter);
 
         return view;
     }

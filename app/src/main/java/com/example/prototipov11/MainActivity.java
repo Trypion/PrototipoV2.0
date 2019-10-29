@@ -25,6 +25,7 @@ import com.example.prototipov11.UI.Perfil.NovoPerfilFragment;
 import com.example.prototipov11.UI.Perfil.PerfilFragment;
 import com.example.prototipov11.UI.Perfil.TwitterFragment;
 import com.google.android.material.navigation.NavigationView;
+import com.twitter.sdk.android.core.Twitter;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Twitter.initialize(this);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
