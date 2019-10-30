@@ -3,4 +3,7 @@
 
     <string name="navigation_drawer_open">Open Navigation drawer</string>
     <string name="navigation_drawer_close">Closer Navigation drawer</string>
+
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">d93rz6W7aEIrXRH6AQCxj5SJH</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">MKhgddcFyP4piXzsrsPhtndFdvgofQyeFK5Vk9BfAUDW1VMWsb</string>
 </resources>

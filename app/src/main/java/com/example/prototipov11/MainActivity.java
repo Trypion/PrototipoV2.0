@@ -25,6 +25,7 @@ import com.example.prototipov11.UI.Perfil.NovoPerfilFragment;
 import com.example.prototipov11.UI.Perfil.PerfilFragment;
 import com.example.prototipov11.UI.Perfil.TwitterFragment;
 import com.google.android.material.navigation.NavigationView;
+import com.twitter.sdk.android.core.Twitter;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        Fragment fragment = new NoticiasFragment();
+        Fragment fragment = new TwitterFragment();
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         boolean perfil = sharedPreferences.getBoolean("perfil", false);
