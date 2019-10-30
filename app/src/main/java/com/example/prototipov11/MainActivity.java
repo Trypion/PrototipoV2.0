@@ -37,8 +37,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Twitter.initialize(this);
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -61,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        Fragment fragment = new NoticiasFragment();
+        Fragment fragment = new TwitterFragment();
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         boolean perfil = sharedPreferences.getBoolean("perfil", false);

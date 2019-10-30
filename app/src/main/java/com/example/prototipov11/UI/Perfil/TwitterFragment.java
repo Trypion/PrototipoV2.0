@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.prototipov11.R;
+import com.twitter.sdk.android.core.Twitter;
 import com.twitter.sdk.android.tweetui.TweetTimelineRecyclerViewAdapter;
 import com.twitter.sdk.android.tweetui.UserTimeline;
 
@@ -24,7 +25,11 @@ public class TwitterFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+        //teste
+
         View view = inflater.inflate(R.layout.twitter_fragment, container, false);
+
+        Twitter.initialize(getContext());
 
         final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler);
 
