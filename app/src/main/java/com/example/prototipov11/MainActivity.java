@@ -19,13 +19,13 @@ import android.widget.Toast;
 
 import com.example.prototipov11.UI.Ajuda.AjudaFragment;
 import com.example.prototipov11.UI.Guia.GuiaFragment;
+import com.example.prototipov11.UI.Guia.MenuGuiaFragment;
 import com.example.prototipov11.UI.Home.NoticiasFragment;
 import com.example.prototipov11.UI.Perfil.NoperfilFragment;
 import com.example.prototipov11.UI.Perfil.NovoPerfilFragment;
 import com.example.prototipov11.UI.Perfil.PerfilFragment;
 import com.example.prototipov11.UI.Perfil.TwitterFragment;
 import com.google.android.material.navigation.NavigationView;
-import com.twitter.sdk.android.core.Twitter;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 break;
             case R.id.nav_guia:
-                fragment = new GuiaFragment();
+                fragment = new MenuGuiaFragment();
 
                 break;
             case R.id.nav_noticia:
