@@ -7,5 +7,20 @@
     <string name="com.twitter.sdk.android.CONSUMER_KEY">d93rz6W7aEIrXRH6AQCxj5SJH</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">MKhgddcFyP4piXzsrsPhtndFdvgofQyeFK5Vk9BfAUDW1VMWsb</string>
 
+    <string-array name="guias">
+
+        <item>Acionando o CBMSC</item>
+        <item>Afogamentos</item>
+        <item>Animais Peçonhentos</item>
+        <item>Cuidado com Crianças</item>
+        <item>Cuidado com Idosos</item>
+        <item>Elevadores</item>
+        <item>Fogos de Artificio</item>
+        <item>Inundações</item>
+        <item>Instalações de Gás</item>
+        <item>Prevenções a Incêndios</item>
+        <item>Primeiros Socorros</item>
+
+    </string-array>
 
 </resources>

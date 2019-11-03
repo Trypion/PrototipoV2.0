@@ -14,23 +14,22 @@ import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.webkit.WebView;
 import android.widget.Toast;
 
 import com.example.prototipov11.UI.Ajuda.AjudaFragment;
 import com.example.prototipov11.UI.Guia.GuiaFragment;
 import com.example.prototipov11.UI.Guia.MenuGuiaFragment;
-import com.example.prototipov11.UI.Home.NoticiasFragment;
 import com.example.prototipov11.UI.Perfil.NoperfilFragment;
 import com.example.prototipov11.UI.Perfil.NovoPerfilFragment;
 import com.example.prototipov11.UI.Perfil.PerfilFragment;
-import com.example.prototipov11.UI.Perfil.TwitterFragment;
+import com.example.prototipov11.UI.Home.TwitterFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawer;
     SharedPreferences sharedPreferences;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -76,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 break;
             case R.id.nav_guia:
-                fragment = new MenuGuiaFragment();
+                fragment = new GuiaFragment();
 
                 break;
             case R.id.nav_noticia:
@@ -124,6 +123,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 editor.putBoolean("perfil", false);
                 editor.apply();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NoperfilFragment()).commit();
+                navigationView.setCheckedItem(R.id.nav_cadastro);
                 return true;
 
             case R.id.perfil_editar:

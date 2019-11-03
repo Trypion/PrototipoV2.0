@@ -7,7 +7,7 @@
     android:background="@color/colorSecundary">
 
     <Button
-        android:id="@+id/btn_teste"
+        android:id="@+id/btn_acionando"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:layout_marginLeft="8dp"
@@ -16,12 +16,12 @@
         android:text="Acionando o CBMSC"
         android:textColor="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/btn_animais"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_criancas" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_animais"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:layout_marginLeft="8dp"
@@ -31,11 +31,11 @@
         android:textColor="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_teste"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintStart_toEndOf="@+id/btn_acionando"
+        app:layout_constraintTop_toBottomOf="@+id/btn_afogamentos" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_criancas"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:layout_marginLeft="8dp"
@@ -43,13 +43,13 @@
         android:background="@drawable/bt_background"
         android:text="Cuidados com Crianças"
         android:textColor="@color/cardview_light_background"
-        app:layout_constraintBottom_toTopOf="@+id/btn_teste"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/btn_acionando"
+        app:layout_constraintEnd_toStartOf="@+id/btn_afogamentos"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_prev" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/btn_idosos"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:layout_marginLeft="8dp"
@@ -57,13 +57,13 @@
         android:background="@drawable/bt_background"
         android:text="Cuidado com Idosos"
         android:textColor="@color/cardview_light_background"
-        app:layout_constraintBottom_toTopOf="@+id/button9"
+        app:layout_constraintBottom_toTopOf="@+id/btn_florestal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button11"
+        app:layout_constraintStart_toEndOf="@+id/btn_elevadores"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/btn_elevadores"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:layout_marginLeft="8dp"
@@ -71,13 +71,13 @@
         android:background="@drawable/bt_background"
         android:text="Elevadores"
         android:textColor="@color/cardview_light_background"
-        app:layout_constraintBottom_toTopOf="@+id/button10"
-        app:layout_constraintEnd_toStartOf="@+id/button12"
+        app:layout_constraintBottom_toTopOf="@+id/btn_fogos"
+        app:layout_constraintEnd_toStartOf="@+id/btn_idosos"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/btn_fogos"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:layout_marginLeft="8dp"
@@ -85,13 +85,13 @@
         android:background="@drawable/bt_background"
         android:text="Fogos de Artificio"
         android:textColor="@color/cardview_light_background"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
-        app:layout_constraintEnd_toStartOf="@+id/button9"
+        app:layout_constraintBottom_toTopOf="@+id/btn_gas"
+        app:layout_constraintEnd_toStartOf="@+id/btn_florestal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_elevadores" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/btn_florestal"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:layout_marginLeft="8dp"
@@ -99,13 +99,13 @@
         android:background="@drawable/bt_background"
         android:text="Incêndio Florestal"
         android:textColor="@color/cardview_light_background"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
+        app:layout_constraintBottom_toTopOf="@+id/btn_inundacoes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button10"
-        app:layout_constraintTop_toBottomOf="@+id/button12" />
+        app:layout_constraintStart_toEndOf="@+id/btn_fogos"
+        app:layout_constraintTop_toBottomOf="@+id/btn_idosos" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/btn_inundacoes"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:layout_marginLeft="8dp"
@@ -113,13 +113,13 @@
         android:background="@drawable/bt_background"
         android:text="Inundações"
         android:textColor="@color/cardview_light_background"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintBottom_toTopOf="@+id/btn_socorros"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button7"
-        app:layout_constraintTop_toBottomOf="@+id/button9" />
+        app:layout_constraintStart_toEndOf="@+id/btn_gas"
+        app:layout_constraintTop_toBottomOf="@+id/btn_florestal" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btn_gas"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:layout_marginLeft="8dp"
@@ -127,13 +127,13 @@
         android:background="@drawable/bt_background"
         android:text="Instalações de gás"
         android:textColor="@color/cardview_light_background"
-        app:layout_constraintBottom_toTopOf="@+id/button6"
-        app:layout_constraintEnd_toStartOf="@+id/button8"
+        app:layout_constraintBottom_toTopOf="@+id/btn_prev"
+        app:layout_constraintEnd_toStartOf="@+id/btn_inundacoes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button10" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_fogos" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btn_prev"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:layout_marginLeft="8dp"
@@ -141,13 +141,13 @@
         android:background="@drawable/bt_background"
         android:text="Prevenções a Incêndios"
         android:textColor="@color/cardview_light_background"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toStartOf="@+id/button5"
+        app:layout_constraintBottom_toTopOf="@+id/btn_criancas"
+        app:layout_constraintEnd_toStartOf="@+id/btn_socorros"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_gas" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btn_socorros"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:layout_marginLeft="8dp"
@@ -155,13 +155,13 @@
         android:background="@drawable/bt_background"
         android:text="Primeiros Socorros"
         android:textColor="@color/cardview_light_background"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/btn_afogamentos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button6"
-        app:layout_constraintTop_toBottomOf="@+id/button8" />
+        app:layout_constraintStart_toEndOf="@+id/btn_prev"
+        app:layout_constraintTop_toBottomOf="@+id/btn_inundacoes" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn_afogamentos"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:layout_marginLeft="8dp"
@@ -169,10 +169,10 @@
         android:background="@drawable/bt_background"
         android:text="Afogamentos"
         android:textColor="@color/cardview_light_background"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/btn_animais"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintStart_toEndOf="@+id/btn_criancas"
+        app:layout_constraintTop_toBottomOf="@+id/btn_socorros" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
