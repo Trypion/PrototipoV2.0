@@ -6,6 +6,7 @@
 
     <string name="com.twitter.sdk.android.CONSUMER_KEY">d93rz6W7aEIrXRH6AQCxj5SJH</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">MKhgddcFyP4piXzsrsPhtndFdvgofQyeFK5Vk9BfAUDW1VMWsb</string>
+    <string name="entre_com_seu_perfil_google_e_cadastre_valvulas_e_mangueiras_de_g_s_e_avisaremos_voc_quando_a_validade_estiver_pra_vencer_fazendo_isso_nos_ajuda_a_manter_a_comunidade_mais_segura">Entre com seu perfil google e cadastre valvulas e mangueiras de gás e avisaremos você quando a validade estiver pra vencer, fazendo isso nos ajuda a manter a comunidade mais segura!</string>
 
     <string-array name="guias">
 

@@ -45,7 +45,6 @@ public class GuiaFragment extends Fragment implements AdapterView.OnItemSelected
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-
         String selecionado = adapterView.getItemAtPosition(i).toString();
 
         switch (selecionado) {

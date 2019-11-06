@@ -23,6 +23,12 @@ import com.example.prototipov11.UI.Perfil.NoperfilFragment;
 import com.example.prototipov11.UI.Perfil.NovoPerfilFragment;
 import com.example.prototipov11.UI.Perfil.PerfilFragment;
 import com.example.prototipov11.UI.Home.TwitterFragment;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -30,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawer;
     SharedPreferences sharedPreferences;
     NavigationView navigationView;
+    GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +49,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -62,7 +75,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         boolean perfil = sharedPreferences.getBoolean("perfil", false);
-
 
         switch (menuItem.getItemId()) {
             case R.id.nav_cadastro:
@@ -122,14 +134,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean("perfil", false);
                 editor.apply();
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NoperfilFragment()).commit();
+                signOut();
                 navigationView.setCheckedItem(R.id.nav_cadastro);
                 return true;
 
             case R.id.perfil_editar:
                 boolean perfil = sharedPreferences.getBoolean("perfil", false);
                 if(perfil) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NovoPerfilFragment()).commit();
+                    //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NovoPerfilFragment()).commit();
                     return true;
                 }else {
                     Toast.makeText(this, "Nenhum Perfil Cadastrado", Toast.LENGTH_LONG).show();
@@ -139,5 +151,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    protected void onStart() {
+
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        //atualizar a UI com acoount, se account for null entao nao tem perfil logado
+        if (account==null){
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("perfil", false);
+            editor.apply();
+        }
+
+        super.onStart();
+
+    }
+
+    private void signOut() {
+        mGoogleSignInClient.signOut()
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(MainActivity.this, "deslogado", Toast.LENGTH_LONG).show();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NoperfilFragment()).commit();
+                    }
+                });
     }
 }

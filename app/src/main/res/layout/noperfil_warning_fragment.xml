@@ -8,10 +8,13 @@
     android:background="@color/colorSecundary">
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:alpha="0.1"
         android:src="@drawable/logo_bomb"
-        android:alpha="0.1"/>
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -19,7 +22,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="150dp"
@@ -43,7 +45,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Você não possui um perfil cadastrado crie um novo perfil ou entre com um ja existente!"
+                android:text="@string/entre_com_seu_perfil_google_e_cadastre_valvulas_e_mangueiras_de_g_s_e_avisaremos_voc_quando_a_validade_estiver_pra_vencer_fazendo_isso_nos_ajuda_a_manter_a_comunidade_mais_segura"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
@@ -56,30 +58,13 @@
 
     </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/bt_criaruser"
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Criar um Novo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        android:background="@drawable/bt_background"
-        android:textColor="@color/colorPrimaryDark"
-        android:padding="8dp"/>
-
-    <Button
-        android:id="@+id/bt_possuiuser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:padding="8dp"
-        android:text="Já possuo um"
-        android:textColor="@color/colorPrimaryDark"
-        android:background="@drawable/bt_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_criaruser" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
