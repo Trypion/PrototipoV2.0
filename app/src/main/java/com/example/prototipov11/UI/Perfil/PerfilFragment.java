@@ -54,19 +54,11 @@ public class PerfilFragment extends Fragment {
             Glide.with(this).load(String.valueOf(personPhoto)).into(imageView);
         }
 
-        /*
-        model.getDados().observe(this, new Observer<Bundle>() {
-            @Override
-            public void onChanged(Bundle bundle) {
-                perfilNome.setText(bundle.getString("nome", ""));
-            }
-        });
-        */
-
         ImageButton btn_novo_item = (ImageButton) view.findViewById(R.id.btn_novo_cad);
         btn_novo_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
 
             }
         });

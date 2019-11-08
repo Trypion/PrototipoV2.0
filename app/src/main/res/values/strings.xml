@@ -24,4 +24,12 @@
 
     </string-array>
 
+    <string-array name="equipamentos">
+
+        <item>Válvula</item>
+        <item>Mangueira</item>
+        <item>Extintor</item>
+
+    </string-array>
+
 </resources>
