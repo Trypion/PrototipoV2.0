@@ -59,6 +59,7 @@ public class PerfilFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container, new CadastroFragment()).commit();
 
             }
         });
