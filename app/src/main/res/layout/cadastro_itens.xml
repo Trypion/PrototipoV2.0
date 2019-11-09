@@ -5,30 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo_bomb"
-        android:alpha="0.3"/>
+
     <TextView
         android:id="@+id/txv1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Primeiro escolha o que você deseja cadastrar"
+        android:text="Escolha o que você deseja cadastrar"
         android:textAlignment="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="10dp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="20sp"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <Spinner
         android:id="@+id/spinner_cad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txv1" />
@@ -37,12 +33,14 @@
         android:id="@+id/txv2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Agora nos informe a data da validade do item escolhido"
+        android:text="Informe a data da validade do item"
         android:textAlignment="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinner_cad"
-        android:textSize="20sp"/>
+        app:layout_constraintTop_toBottomOf="@id/spinner_cad" />
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,6 +49,8 @@
         android:textAlignment="center"
         android:textSize="20sp"
         app:errorEnabled="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txv2"
@@ -60,33 +60,46 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
-
     <TextView
         android:id="@+id/txv5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="email de contato (opcional)"
-        app:layout_constraintTop_toBottomOf="@id/txv3"
+        android:text="Caso não nos fornecer outro email, usaremos a sua conta Google"
         android:textAlignment="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@id/txv3"
         android:textSize="20sp"/>
 
-    <EditText
-        app:layout_constraintTop_toBottomOf="@id/txv5"
-        android:id="@+id/txt1"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="se você não fornecer nenhum usaremos o do seu perfil google"
-        android:textAlignment="center"/>
+        android:hint="email de contato (opcional)"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txv2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <TextView
         android:id="@+id/txv4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Por ultimo precisamos do local onde o item está, para isso aponte o local usando o mapa abaixo"
+        android:text="Agora adicione o local onde o item está"
         android:textAlignment="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt1"
         android:textSize="20sp"/>
 
     <TextView
