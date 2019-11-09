@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhite"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -33,7 +34,7 @@
         android:id="@+id/txv2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Informe a data da validade do item"
+        android:text="Informe abaixo a data da validade do item"
         android:textAlignment="center"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
@@ -41,19 +42,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/spinner_cad" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txv3"
         android:hint="ex: 21/11/2022"
+        android:textColorHint="@color/colorPrimary"
         android:textAlignment="center"
+        app:boxStrokeColor="@color/colorPrimary"
         android:textSize="20sp"
         app:errorEnabled="true"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txv2"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <com.google.android.material.textfield.TextInputEditText
             android:inputType="date"
@@ -74,13 +75,14 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="email de contato (opcional)"
+        android:hint="email (opcional)"
+        android:textColorHint="@color/colorPrimary"
+        app:boxStrokeColor="@color/colorPrimary"
+        android:outlineSpotShadowColor="@color/colorPrimary"
         android:textAlignment="center"
         android:textSize="20sp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txv2"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <com.google.android.material.textfield.TextInputEditText
@@ -102,17 +104,6 @@
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="20sp"/>
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:text="PLACE HOLDER MAPS"
-        app:layout_constraintBottom_toTopOf="@id/btn_ok"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txv4" />
-
-
     <Button
         android:id="@+id/btn_ok"
         android:layout_width="match_parent"
@@ -125,8 +116,5 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="8dp"
         android:background="@drawable/bt_background"/>
-
-
-
 
 </LinearLayout>
