@@ -45,7 +45,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/entre_com_seu_perfil_google_e_cadastre_valvulas_e_mangueiras_de_g_s_e_avisaremos_voc_quando_a_validade_estiver_pra_vencer_fazendo_isso_nos_ajuda_a_manter_a_comunidade_mais_segura"
+                android:text="@string/msg_login"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 

@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txv3"
-        android:hint="ex: 21/11/2022"
+        android:hint="ex: 11/2022"
         android:textColorHint="@color/colorPrimary"
         android:textAlignment="center"
         app:boxStrokeColor="@color/colorPrimary"
@@ -61,6 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
+
     <TextView
         android:id="@+id/txv5"
         android:layout_width="match_parent"
@@ -105,10 +106,10 @@
         android:textSize="20sp"/>
 
     <Button
-        android:id="@+id/btn_ok"
+        android:id="@+id/btn_map"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="cadastrar"
+        android:text="Mapa"
         android:textColor="@color/colorWhite"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
