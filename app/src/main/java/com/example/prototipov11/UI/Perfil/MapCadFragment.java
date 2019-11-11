@@ -71,7 +71,7 @@ public class MapCadFragment extends Fragment implements OnMapReadyCallback, Goog
         map.setOnMyLocationButtonClickListener(this);
         map.setOnMyLocationClickListener(this);
         map.setMyLocationEnabled(true);
-      
+
 
         /*
         LatLng senai = new LatLng(-27.619230, -48.647334);
