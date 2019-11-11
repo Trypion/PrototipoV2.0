@@ -4,10 +4,12 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,6 +26,10 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+
+import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class MapCadFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener,
         GoogleMap.OnMyLocationClickListener, ActivityCompat.OnRequestPermissionsResultCallback {
@@ -36,9 +42,23 @@ public class MapCadFragment extends Fragment implements OnMapReadyCallback, Goog
 
         View view = inflater.inflate(R.layout.map_cad, container, false);
 
-        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+        final SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
 
         mapFragment.getMapAsync(this);
+
+
+
+        Button btn_local = (Button) view.findViewById(R.id.btn_local);
+        btn_local.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LatLng centerLatLang = map.getProjection().getVisibleRegion().latLngBounds.getCenter();
+
+                Log.d("maps", centerLatLang.toString());
+
+            }
+        });
+
 
         return view;
     }
@@ -51,6 +71,7 @@ public class MapCadFragment extends Fragment implements OnMapReadyCallback, Goog
         map.setOnMyLocationButtonClickListener(this);
         map.setOnMyLocationClickListener(this);
         map.setMyLocationEnabled(true);
+      
 
         /*
         LatLng senai = new LatLng(-27.619230, -48.647334);
