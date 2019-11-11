@@ -4,6 +4,12 @@
     <string name="navigation_drawer_open">Open Navigation drawer</string>
     <string name="navigation_drawer_close">Closer Navigation drawer</string>
 
+    <string name="txv_1">Escolha o que você deseja cadastrar</string>
+    <string name="txv_2">Informe abaixo a data da validade do item</string>
+    <string name="txv_3">Caso não nos fornecer outro email, usaremos a sua conta Google</string>
+    <string name="txv_4">Agora adicione o local onde o item está</string>
+    <string name="txv_5">Agora adicione o local onde o item está</string>
+
     <string name="com.twitter.sdk.android.CONSUMER_KEY">d93rz6W7aEIrXRH6AQCxj5SJH</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">MKhgddcFyP4piXzsrsPhtndFdvgofQyeFK5Vk9BfAUDW1VMWsb</string>
 
