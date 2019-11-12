@@ -43,7 +43,6 @@ public class PerfilFragment extends Fragment {
 
         mGoogleSignInClient = GoogleSignIn.getClient(getContext(), gso);
 
-
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getContext());
         if (acct != null) {
             String personName = acct.getDisplayName();
