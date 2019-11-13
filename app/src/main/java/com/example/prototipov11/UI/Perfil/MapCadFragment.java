@@ -80,11 +80,9 @@ public class MapCadFragment extends Fragment implements OnMapReadyCallback, Goog
         map.setOnMyLocationButtonClickListener(this);
         map.setOnMyLocationClickListener(this);
         map.setMyLocationEnabled(true);
-        /*
-        LatLng senai = new LatLng(-27.619230, -48.647334);
-        map.addMarker(new MarkerOptions().position(senai).title("Marca em Senai"));
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(senai, 15));
-         */
+
+        LatLng start = new LatLng(-27.585485, -48.722784);
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(start, 11));
 
     }
 
@@ -98,6 +96,7 @@ public class MapCadFragment extends Fragment implements OnMapReadyCallback, Goog
         Toast.makeText(getContext(), "Indo para a sua localização", Toast.LENGTH_SHORT).show();
         // Return false so that we don't consume the event and the default behavior still occurs
         // (the camera animates to the user's current position).
+        map.moveCamera(CameraUpdateFactory.zoomTo(15));
         return false;
     }
 

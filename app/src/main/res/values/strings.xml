@@ -9,7 +9,7 @@
     <string name="hint1">Ex: 11/2022</string>
     <string name="hint2">email (opcional)</string>
     <string name="txv_1">Escolha o que você deseja cadastrar</string>
-    <string name="txv_2">Informe abaixo a data da validade do item</string>
+    <string name="txv_2">Informe abaixo a data da validade ou de fabricação do item</string>
     <string name="txv_3">Caso não nos fornecer outro email, usaremos a sua conta Google</string>
     <string name="txv_4">Agora adicione o local onde o item está</string>
     <string name="txv_5">Agora adicione o local onde o item está</string>
@@ -18,11 +18,12 @@
     <string name="com.twitter.sdk.android.CONSUMER_KEY" tools:ignore="ExtraTranslation">d93rz6W7aEIrXRH6AQCxj5SJH</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET" tools:ignore="ExtraTranslation">MKhgddcFyP4piXzsrsPhtndFdvgofQyeFK5Vk9BfAUDW1VMWsb</string>
 
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCZwg1ArK6JIycV3viHKSt4sRTYaPTQOOM</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDB1R7HJNseTgwq_4ennXd28u9gcLyEiKc</string>
 
     <string name="msg_login">Entre com seu perfil google e cadastre valvulas, mangueiras de gás entre outros e avisaremos você quando a troca for necessária, fazendo isso nos ajuda a manter a comunidade mais segura!</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="validade">Validade</string>
+    <string name="fabricacao">Fabricação</string>
 
     <string-array name="guias">
 
