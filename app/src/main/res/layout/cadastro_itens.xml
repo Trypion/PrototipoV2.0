@@ -80,6 +80,7 @@
                 app:errorEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/validade_item"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="date" />
@@ -115,6 +116,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email_op"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />

@@ -44,7 +44,7 @@ public class NovoPerfilFragment extends Fragment {
                 perfil.putString("email", perfilEmail.getText().toString());
                 perfil.putString("telefone", perfilTelefone.getText().toString());
 
-                model.setDados(perfil);
+                //model.setDados(perfil);
 
                 Toast.makeText(getActivity(), "Perfil Criado", Toast.LENGTH_SHORT).show();
 

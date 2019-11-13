@@ -18,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.example.prototipov11.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -35,6 +37,7 @@ public class MapCadFragment extends Fragment implements OnMapReadyCallback, Goog
         GoogleMap.OnMyLocationClickListener, ActivityCompat.OnRequestPermissionsResultCallback {
 
     private GoogleMap map;
+    private PerfilViewModel model;
 
     @Nullable
     @Override
@@ -44,9 +47,9 @@ public class MapCadFragment extends Fragment implements OnMapReadyCallback, Goog
 
         final SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
 
+        model = ViewModelProviders.of(getActivity()).get(PerfilViewModel.class);
+
         mapFragment.getMapAsync(this);
-
-
 
         Button btn_local = (Button) view.findViewById(R.id.btn_local);
         btn_local.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +58,12 @@ public class MapCadFragment extends Fragment implements OnMapReadyCallback, Goog
                 LatLng centerLatLang = map.getProjection().getVisibleRegion().latLngBounds.getCenter();
 
                 Log.d("maps", centerLatLang.toString());
+
+                model.setGps(centerLatLang.toString());
+
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, new PerfilFragment());
+                fragmentTransaction.commit();
 
             }
         });
@@ -71,8 +80,6 @@ public class MapCadFragment extends Fragment implements OnMapReadyCallback, Goog
         map.setOnMyLocationButtonClickListener(this);
         map.setOnMyLocationClickListener(this);
         map.setMyLocationEnabled(true);
-
-
         /*
         LatLng senai = new LatLng(-27.619230, -48.647334);
         map.addMarker(new MarkerOptions().position(senai).title("Marca em Senai"));
@@ -83,7 +90,7 @@ public class MapCadFragment extends Fragment implements OnMapReadyCallback, Goog
 
     @Override
     public void onMyLocationClick(@NonNull Location location) {
-        Toast.makeText(getContext(), "Current location:\n" + location, Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(), "Essa é a sua localização", Toast.LENGTH_LONG).show();
     }
 
     @Override
