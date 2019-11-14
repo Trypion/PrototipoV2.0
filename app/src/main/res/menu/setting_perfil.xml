@@ -3,10 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <group>
-
-        <item android:title="PLACE HOLDER"
-            android:id="@+id/perfil_editar"/>
-
         <item android:title="Logout"
             android:id="@+id/perfil_excluir"/>
 

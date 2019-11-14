@@ -80,6 +80,7 @@ public class MapCadFragment extends Fragment implements OnMapReadyCallback, Goog
         map.setOnMyLocationButtonClickListener(this);
         map.setOnMyLocationClickListener(this);
         map.setMyLocationEnabled(true);
+        map.getUiSettings().setZoomControlsEnabled(true);
 
         LatLng start = new LatLng(-27.585485, -48.722784);
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(start, 11));

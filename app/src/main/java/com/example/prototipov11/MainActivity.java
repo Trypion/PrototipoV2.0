@@ -138,16 +138,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 navigationView.setCheckedItem(R.id.nav_cadastro);
                 return true;
 
-            case R.id.perfil_editar:
-                boolean perfil = sharedPreferences.getBoolean("perfil", false);
-                if(perfil) {
-                    //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NovoPerfilFragment()).commit();
-                    return true;
-                }else {
-                    Toast.makeText(this, "Nenhum Perfil Cadastrado", Toast.LENGTH_LONG).show();
-                    return true;
-                }
-
             default:
                 return super.onOptionsItemSelected(item);
         }
