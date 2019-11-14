@@ -26,13 +26,4 @@
             android:title="Ajuda" />
     </group>
 
-    <item android:title="Contato">
-        <menu>
-            <item
-                android:id="@+id/nav_contato"
-                android:icon="@drawable/ic_email_black_24dp"
-                android:title="Contato" />
-        </menu>
-    </item>
-
 </menu>

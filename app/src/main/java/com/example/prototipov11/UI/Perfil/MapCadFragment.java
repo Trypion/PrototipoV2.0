@@ -61,6 +61,8 @@ public class MapCadFragment extends Fragment implements OnMapReadyCallback, Goog
 
                 model.setGps(centerLatLang.toString());
 
+                Toast.makeText(getContext(), "Item Cadastrado", Toast.LENGTH_LONG).show();
+
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, new PerfilFragment());
                 fragmentTransaction.commit();

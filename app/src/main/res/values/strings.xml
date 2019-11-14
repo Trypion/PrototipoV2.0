@@ -18,7 +18,7 @@
     <string name="com.twitter.sdk.android.CONSUMER_KEY" tools:ignore="ExtraTranslation">d93rz6W7aEIrXRH6AQCxj5SJH</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET" tools:ignore="ExtraTranslation">MKhgddcFyP4piXzsrsPhtndFdvgofQyeFK5Vk9BfAUDW1VMWsb</string>
 
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDB1R7HJNseTgwq_4ennXd28u9gcLyEiKc</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCAYZHrw8_gPd2TyoojlzKKAsfpMGhP6hk</string>
 
     <string name="msg_login">Entre com seu perfil google e cadastre valvulas, mangueiras de gás entre outros e avisaremos você quando a troca for necessária, fazendo isso nos ajuda a manter a comunidade mais segura!</string>
 

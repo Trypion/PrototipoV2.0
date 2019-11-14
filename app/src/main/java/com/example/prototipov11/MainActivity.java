@@ -98,9 +98,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragment = new AjudaFragment();
 
                 break;
-            case R.id.nav_contato:
-                Toast.makeText(this, "contato feito", Toast.LENGTH_SHORT).show();
-                break;
         }
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
