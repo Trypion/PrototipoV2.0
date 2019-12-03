@@ -3,6 +3,8 @@ package com.example.prototipov11.UI.Perfil;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -62,7 +64,6 @@ public class PerfilFragment extends Fragment {
 
             }
         });
-
 
         return view;
     }

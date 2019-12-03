@@ -2,11 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <group
-        android:id="@+id/logout_group">
+    <group>
+        <item android:title="Excluir todos os itens"
+            android:id="@+id/itens_deleteall"/>
 
-        <item android:title="Logout"
-            android:id="@+id/perfil_excluir"/>
     </group>
-
 </menu>

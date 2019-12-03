@@ -3,6 +3,7 @@ package com.example.prototipov11.UI.Adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -28,7 +29,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.textView.setText(mDataset[position]);
+        //holder.textView.setText(mDataset[position]);
     }
 
     @Override
@@ -37,12 +38,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView textView;
+        public TextView txv_validade;
+        public TextView txv_itemname;
+        public ImageView img_item;
         public MyViewHolder(View itemView){
             super(itemView);
-            textView = itemView.findViewById(R.id.my_text_view);
+            txv_validade = itemView.findViewById(R.id.validade_itemlist);
+            txv_itemname = itemView.findViewById(R.id.nome_itemlist);
+            img_item = itemView.findViewById(R.id.img_item);
+
         }
     }
+
+
 
 
 }
