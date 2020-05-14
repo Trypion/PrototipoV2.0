@@ -13,4 +13,4 @@
 <h4>O app</h4>
 <p>O app tem como objetivo cadastrar valvulas/mangueiras de gás e extintores de incêndio para fazer o controle preventivo da validade dos mesmo</p>
 
- <img src="https://i.imgur.com/4fkKnap.jpg">	
+![alt text](https://i.imgur.com/4fkKnap.jpg "prototipo de tela")
